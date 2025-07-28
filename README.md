@@ -1,4 +1,4 @@
-#  BPSI API
+#  BPSI LOGIN API FOR STAFF AND STUDENT - BACKEND 
 
 A Next.js API project with MongoDB integration for  BPSI (Business Process System Integration).
 
