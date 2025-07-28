@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": " BPSI API - Simple Tests",
+    "description": "Simple collection for testing  BPSI API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3002/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Register Staff",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"staff@ BPSI.com\",\n  \"password\": \"password123\",\n  \"name\": \"John Staff\",\n  \"role\": \"staff\",\n  \"department\": \"IT\",\n  \"position\": \"Teacher\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/register",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "2. Register Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"student@ BPSI.com\",\n  \"password\": \"password123\",\n  \"name\": \"Jane Student\",\n  \"role\": \"student\",\n  \"studentId\": \"STU001\",\n  \"grade\": \"10\",\n  \"section\": \"A\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/register",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "3. Login Staff",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"staff@ BPSI.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/login",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "4. Login Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"student@ BPSI.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/login",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "5. Staff Start Session",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"6886aaefcdebf2515007a372\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/staff/start",
+          "host": ["{{base_url}}"],
+          "path": ["staff", "start"]
+        }
+      }
+    },
+    {
+      "name": "6. Student Start Session",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"6886aaefcdebf2515007a375\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/student/start",
+          "host": ["{{base_url}}"],
+          "path": ["student", "start"]
+        }
+      }
+    }
+  ]
+} 
